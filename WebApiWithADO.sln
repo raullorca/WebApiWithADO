@@ -6,10 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E9751B5F-C3D7-4DFB-86BD-73786F8155C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{22BFC3BE-C5D1-4D64-B290-9A3FD7FB579D}"
+	ProjectSection(SolutionItems) = preProject
+		Employee.json = Employee.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B678A2F0-F388-4337-BD52-7826F798FAEE}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
+		scripts.sql = scripts.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{39BBF16F-EFBE-446C-8D0F-96FE87D122B7}"
