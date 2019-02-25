@@ -38,7 +38,7 @@ namespace WebApi.Controllers
         }
 
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> Put(int id, Employee employee)
+        public async Task<IHttpActionResult> Put(int id, EmployeeViewModel employee)
         {
             if (!ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace WebApi.Controllers
         }
 
         [ResponseType(typeof(Employee))]
-        public async Task<IHttpActionResult> Post(Employee employee)
+        public async Task<IHttpActionResult> Post(EmployeeViewModel employee)
         {
             if (!ModelState.IsValid)
             {

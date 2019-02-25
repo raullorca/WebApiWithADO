@@ -8,8 +8,8 @@ namespace WebApi.Services
     {
         Task<Employee> Get(int id);
         Task<IQueryable<Employee>> GetAll();
-        Task Insert(Employee employee);
-        Task Update(int id, Employee employee);
+        Task Insert(EmployeeViewModel employee);
+        Task Update(int id, EmployeeViewModel employee);
         Task Delete(int id);
         Task<bool> EmployeeExists(int id);
     }
