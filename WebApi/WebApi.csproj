@@ -80,12 +80,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\WebApiWithADO.mdf" />
-    <Content Include="App_Data\WebApiWithADO_log.ldf">
-      <DependentUpon>WebApiWithADO.mdf</DependentUpon>
+    <Content Include="App_Data\redarborDb.mdf" />
+    <Content Include="App_Data\redarborDb_log.ldf">
+      <DependentUpon>redarborDb.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
