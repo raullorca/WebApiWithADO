@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -13,7 +10,7 @@ namespace WebApi.Controllers
 {
     public class RedarborController : ApiController
     {
-        IEmployeeService _service;
+        readonly IEmployeeService _service;
 
         public RedarborController()
         {
@@ -79,7 +76,7 @@ namespace WebApi.Controllers
 
             try
             {
-                _service.Insert(employee);
+                await _service.Insert(employee);
             }
             catch
             {

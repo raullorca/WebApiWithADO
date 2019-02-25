@@ -1,52 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using WebApi.Models;
+using WebApi.Repository;
 
 namespace WebApi.Services
 {
-    public interface IEmployeeService
-    {
-        Task<Employee> Get(int id);
-        Task<IQueryable<Employee>> GetAll();
-        Task Insert(Employee employee);
-        Task Update(int id, Employee employee);
-        Task Delete(int id);
-        Task<bool> EmployeeExists(int id);
-    }
-
     public class EmployeeService : IEmployeeService
     {
-        public Task Delete(int id)
+        readonly IEmployeeRepository _repository;
+
+        public EmployeeService()
         {
-            throw new NotImplementedException();
+            _repository = new EmployeeRepository();
         }
 
-        public Task<bool> EmployeeExists(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            await _repository.Delete(id);
         }
 
-        public Task<Employee> Get(int id)
+        public async Task<bool> EmployeeExists(int id)
         {
-            throw new NotImplementedException();
+            return await _repository.EmployeeExists(id);
         }
 
-        public Task<IQueryable<Employee>> GetAll()
+        public async Task<Employee> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _repository.Get();
         }
 
-        public Task Insert(Employee employee)
+        public async Task<IQueryable<Employee>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _repository.GetAll();
         }
 
-        public Task Update(int id, Employee employee)
+        public async Task Insert(Employee employee)
         {
-            throw new NotImplementedException();
+            await _repository.Insert(employee);
+        }
+
+        public async Task Update(int id, Employee employee)
+        {
+            await _repository.Update(id, employee);
         }
     }
 }
